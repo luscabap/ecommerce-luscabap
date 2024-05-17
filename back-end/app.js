@@ -1,11 +1,9 @@
-const express = require("express");
+import express from "express";
+import routes from "./routes/index.js";
+
 const app = express();
-const PORT = 4000;
+app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send("Hello World!");
-});
+routes(app);
 
-app.listen(PORT, () => {
-  console.log(`Servidor escutando na porta ${PORT}`);
-})
+export default app;

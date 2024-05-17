@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Back-End para o E-commerce Doces",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "dev": "nodemon server.js"
   },
   "author": "Lucas Baptista",
   "license": "ISC",
