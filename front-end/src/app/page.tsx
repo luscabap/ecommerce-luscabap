@@ -1,18 +1,3 @@
-type respostaApi = {
-  resposta: string
-}
-
-// export const getServerSideProps = async () => {
-//   const requisicao = await fetch("http://localhost:4000/");
-//   const resposta = await requisicao.json();
-
-//   return {
-//     props: {
-//       resposta
-//     }
-//   };
-// };
-
 async function getData(){
   const requisicao = await fetch("http://localhost:4000/");
 
