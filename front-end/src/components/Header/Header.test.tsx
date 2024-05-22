@@ -4,10 +4,11 @@ import { render, screen } from "@testing-library/react";
 
 describe("Component <Header />", () => {
   test("It should have a title", () => {
-    render(<Header />);
+    const textHeader = "Site Doces";
+    render(<Header titulo={textHeader}/>);
 
-    const title = screen.getByText("Site Doces");
+    const title = screen.getByTestId("title");
 
-    expect(title).toBeInTheDocument();
+    expect(title).toHaveTextContent(textHeader);
   });
 });
