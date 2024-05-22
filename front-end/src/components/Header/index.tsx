@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { LuCakeSlice } from "react-icons/lu";
+import ToggleTheme from "../ToggleTheme";
+import { MdPeopleOutline } from "react-icons/md";
 
 type HeaderProps = {
   titulo: string;
@@ -26,21 +28,20 @@ const routesInfo = [
 ];
 
 const iconProps = {
-  color: "rgb(147 197 253)",
-  size: "40",
+  color: "rgb(157 23 77)",
+  size: "40"
 };
 
-export default function Header({
-  titulo = "Site Doces",
-  secundario = false,
-}: HeaderProps) {
+export default function Header({ titulo, secundario = false }: HeaderProps) {
   return (
     <header
-      className={`flex justify-between items-center w-full bg-zinc-700 h-20 rounded-md
-      ${secundario ? "bg-white border-blue-300 border-solid border-2 rounded-md" : "bg-zinc-700"}`}
+      className={`flex justify-between items-center w-full bg-yellow-500 h-20 rounded-md dark:bg-transparent transition-all border-2 border-solid border-yellow-500
+      ${secundario ? "bg-white border-blue-300 border-solid border-2 rounded-md bg-transparent" : "bg-yellow-500"}`}
     >
       <Link href="/" className="flex items-center justify-center p-6 gap-3">
-        <h1 className="text-blue-300 text-2xl">{titulo}</h1>
+        <h1 className="text-pink-800 text-2xl" data-testid="title">
+          {titulo}
+        </h1>
         <LuCakeSlice {...iconProps} />
       </Link>
       <nav>
@@ -49,13 +50,17 @@ export default function Header({
             <Link
               href={`/${route.slug}`}
               key={idx}
-              className={`text-white transition-all hover:text-blue-300 ${secundario ? "text-black" : "text-white"}`}
+              className={`text-white transition-all hover:text-pink-500  dark:text-black ${secundario ? "text-black" : "text-white"}`}
             >
               {route.titulo}
             </Link>
           ))}
         </ul>
       </nav>
+      <div className="flex items-center justify-center gap-5 m-5">
+        <ToggleTheme />
+        <MdPeopleOutline {...iconProps}/>
+      </div>
     </header>
   );
 }
