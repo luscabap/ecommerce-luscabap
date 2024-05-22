@@ -9,8 +9,6 @@ async function getData(){
   return resposta;
 }
 
-
-
 export default async function Home() {
   const data = await getData();
   return (

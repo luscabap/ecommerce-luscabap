@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <Header titulo="Site de Doces"/>
+        <Header titulo="Doces Re & Luck"/>
         {children}
         <Footer />
       </body>
