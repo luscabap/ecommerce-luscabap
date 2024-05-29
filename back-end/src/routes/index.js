@@ -1,4 +1,5 @@
 import express from "express";
+import doces from "./docesRoute.js";
 
 const routes = (app) => {
   app.route("/").get((req, res) => {
@@ -9,7 +10,7 @@ const routes = (app) => {
     }
   });
 
-  app.use(express.json());
+  app.use(express.json(), doces);
 }
 
 export default routes;
