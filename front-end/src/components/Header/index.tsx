@@ -50,7 +50,7 @@ export default function Header({ titulo, secundario = false }: HeaderProps) {
             <Link
               href={`/${route.slug}`}
               key={idx}
-              className={`text-white transition-all hover:text-pink-500  dark:text-black ${secundario ? "text-black" : "text-white"}`}
+              className={`text-white transition-all hover:text-pink-500  dark:text-black ${secundario ? "text-black" : "text-white dark:hover:text-pink-500"}`}
             >
               {route.titulo}
             </Link>
