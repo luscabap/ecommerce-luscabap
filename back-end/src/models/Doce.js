@@ -6,7 +6,9 @@ const doceSchema = new mongoose.Schema({
   preco: { type: Number },
   slug: { type: String },
   foto: { type: String },
-  categoria: { type: String }
+  categoria: { type: String },
+  peso: { type: Number },
+  serve: { type: Number }
 }, { versionKey: false });
 
 const doce = mongoose.model("doces", doceSchema);
