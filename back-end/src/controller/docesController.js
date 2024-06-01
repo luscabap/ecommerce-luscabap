@@ -24,6 +24,30 @@ class docesController {
       next(error)
     }
   }
+
+  static async criarDoce(req, res, next){
+    try {
+      const infosDoce = await req.body;
+      const doceCriado = await doce.create(infosDoce);
+      console.log(doceCriado);
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  static async deleterDocePorId(req, res, next){
+    try {
+      const idDoceASerDeletado = req.params.idDoceASerDeletado;
+      const doceFiltrado = await doce.findByIdAndDelete(idDoceASerDeletado);
+      if (doceFiltrado !== null) {
+        res.status(200).json({ message: `Doce com ID ${idDoceASerDeletado} deletado com sucesso!` })
+      } else {
+        new NaoEncontrado("ID do Doce não encontrado")
+      }
+    } catch (error) {
+      next(error)
+    }
+  }
 }
 
 export default docesController;
