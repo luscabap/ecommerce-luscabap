@@ -27,9 +27,10 @@ class docesController {
 
   static async criarDoce(req, res, next){
     try {
-      const infosDoce = await req.body;
+      const infosDoce = req.body;
       const doceCriado = await doce.create(infosDoce);
       console.log(doceCriado);
+      res.status(201).json({ message: "Doce criado com sucesso!", Doce: doceCriado })
     } catch (error) {
       next(error)
     }
