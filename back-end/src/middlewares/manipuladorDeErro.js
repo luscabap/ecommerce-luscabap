@@ -13,7 +13,6 @@ function manipuladorDeErro(erro, req, res, next) {
     erro.enviarResposta(res)
   } else {
     new ErroBase().enviarResposta(res);
-    console.log(erro)
   }
 }
 
