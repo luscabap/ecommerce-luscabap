@@ -1,3 +1,4 @@
+import ErroBase from "../errors/ErroBase.js";
 import NaoEncontrado from "../errors/NaoEncontrado.js";
 import doce from "../models/Doce.js";
 
@@ -18,7 +19,7 @@ class docesController {
       if (doceFiltrado !== null){
         res.status(200).json({ doce: doceFiltrado })
       } else {
-        next(new NaoEncontrado("Doce não encontrado!"));
+        next(new ErroBase("Doce não encontrado!", 404));
       }
     } catch (error) {
       next(error)

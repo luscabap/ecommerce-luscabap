@@ -1,6 +1,6 @@
 class ErroBase extends Error {
   constructor(mensagem = "Erro interno no servidor", status = 500){
-    console.log("MENSAGEM DO CONSTRUCTOR ERRO BASE", mensagem)
+    console.log("ERRO BASE")
     super();
     this.message = mensagem;
     this.status = status;
