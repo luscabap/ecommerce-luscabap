@@ -1,7 +1,9 @@
+"use client";
 import Link from "next/link";
 import { LuCakeSlice } from "react-icons/lu";
-import ToggleTheme from "../ToggleTheme";
 import { MdPeopleOutline } from "react-icons/md";
+import ToggleTheme from "../ToggleTheme";
+import { UseAppContext } from "@/context";
 
 type HeaderProps = {
   titulo: string;
@@ -33,6 +35,7 @@ const iconProps = {
 };
 
 export default function Header({ titulo, secundario = false }: HeaderProps) {
+  const { pessoa } = UseAppContext();
   return (
     <header
       className={`flex justify-between items-center w-full bg-yellow-500 h-20 rounded-md dark:bg-transparent transition-all border-2 border-solid border-yellow-500
